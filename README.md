@@ -176,3 +176,72 @@ R lang basic note.
     [1] FALSE FALSE  TRUE FALSE  TRUE
     > is.nan(x)
     [1] FALSE FALSE  TRUE FALSE  TRUE
+#数据框
+    #创建数据框，每个元素是一列 列名=列内容格式
+    > df <- data.frame(id = c(1,2,3,4), name=c("zhangsan", "lisi","wangwu","maliu"), age=c(10,20,30,40))
+    > #获取有多少行
+    > nrow(df)
+    [1] 4
+    > #获取有多少列
+    > ncol(df)
+    [1] 3
+    > data.matrix(df)
+         id name age
+    [1,]  1    4  10
+    [2,]  2    1  20
+    [3,]  3    3  30
+    [4,]  4    2  40
+#日期和时间
+    > date()
+    [1] "Fri Dec 25 14:03:00 2015"
+    > x <- date()
+    > class(x)
+    [1] "character"
+    > x2 <- Sys.Date()
+    > x2
+    [1] "2015-12-25"
+    > class(x2)
+    [1] "Date"
+    > x3 <- as.Date(2015-12-12)
+    Error in as.Date.numeric(2015 - 12 - 12) : 'origin'一定得给值
+    > x3 <- as.Date("2015-12-12")
+    > x3
+    [1] "2015-12-12"
+    > weekdays(x3)
+    [1] "星期六"
+    > months(x3)
+    [1] "十二月"
+    > quarters(x3)
+    [1] "Q4"
+    > julian(x3)
+    [1] 16781
+    attr(,"origin")
+    [1] "1970-01-01"
+    > x
+    [1] "Fri Dec 25 14:03:19 2015"
+    > 
+    > y = Sys.time()
+    > y
+    [1] "2015-12-25 14:06:48 CST"
+    > class(y)
+    [1] "POSIXct" "POSIXt" 
+    > p <- as.POSIXlt(y)
+    > p
+    [1] "2015-12-25 14:06:48 CST"
+    > class(p)
+    [1] "POSIXlt" "POSIXt" 
+    > names(unclass(p))
+     [1] "sec"    "min"    "hour"   "mday"   "mon"    "year"  
+     [7] "wday"   "yday"   "isdst"  "zone"   "gmtoff"
+    > p$sec
+    [1] 48.9366
+    > p$min
+    [1] 6
+    > p$year
+    [1] 115
+    > p$wday
+    [1] 5
+    > p$mon
+    [1] 11
+    > p$hour
+    [1] 14
