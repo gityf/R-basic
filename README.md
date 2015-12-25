@@ -60,25 +60,25 @@ R lang basic note.
     [4,]    4    8   12   16   20   24
     > ax1
     , , 1
-    
+
          [,1] [,2] [,3]
     [1,]    1    3    5
     [2,]    2    4    6
-    
+
     , , 2
-    
+
          [,1] [,2] [,3]
     [1,]    7    9   11
     [2,]    8   10   12
-    
+
     , , 3
-    
+
          [,1] [,2] [,3]
     [1,]   13   15   17
     [2,]   14   16   18
-    
+
     , , 4
-    
+
          [,1] [,2] [,3]
     [1,]   19   21   23
     [2,]   20   22   24
@@ -95,32 +95,32 @@ R lang basic note.
         > l
         [[1]]
         [1] 1
-        
+
         [[2]]
         [1] 4
-        
+
         [[3]]
         [1] TRUE
-        
+
         [[4]]
         [1] "cc"
-        
+
         [[5]]
         [1] 10
-        
+
         [[6]]
         [1] 4+2i
-        
+
         > l2
         $a
         [1] 1
-        
+
         $b
         [1] 2
-        
+
         $cc
         [1] 23
-        
+
         > mx
            h  w
         x 10 13
@@ -129,6 +129,50 @@ R lang basic note.
         > l3
         [[1]]
         [1] 2 1 4
-        
+
         [[2]]
         [1] 4 7 8
+#因子factor
+    用于处理分类数据（处理有序和无序的分类数据）
+    相当于一个整数向量+标签
+    y <- factor(c("f","f","t","t","f"), levels=c("t","f"))
+    levels用于设置基线水平
+    #去掉因子的属性
+    unclass(y)
+    > y
+    [1] f f t t f
+    Levels: t f
+    > table(y)
+    y
+    t f 
+    2 3 
+    > unclass(y)
+    [1] 2 2 1 1 2
+    attr(,"levels")
+    [1] "t" "f"
+    > class(unclass(y))
+    [1] "integer"
+
+
+#缺失值
+    NA/NaN: NaN是NA的子集,NA有类型属性：integer NA,character NA etc.
+    判断是否是缺失值
+    is.na()
+    is.nan()
+    x <- c(1,2,NA,4,NA)
+    is.na(x)
+    is.nan(x)
+    x <- c(1,2,NaN,4,NaN)
+    is.na(x)
+    is.nan(x)
+    ######
+    > x <- c(1,2,NA,4,NA)
+    > is.na(x)
+    [1] FALSE FALSE  TRUE FALSE  TRUE
+    > is.nan(x)
+    [1] FALSE FALSE FALSE FALSE FALSE
+    > x <- c(1,2,NaN,4,NaN)
+    > is.na(x)
+    [1] FALSE FALSE  TRUE FALSE  TRUE
+    > is.nan(x)
+    [1] FALSE FALSE  TRUE FALSE  TRUE
