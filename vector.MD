@@ -9,7 +9,7 @@
     str <- "this is string"
 
 # 3.向量
-# 一个向量里面只能包含同一类型的对象
+    一个向量里面只能包含同一类型的对象
 ## 创建向量
     x <- vector("character", length=10)
     x <- 1:4
