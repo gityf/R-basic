@@ -1,5 +1,5 @@
 # 1. R用#注释
-    \#this is comment.
+    #this is comment.
 
 # 2. 赋值
     x <- 11
