@@ -21,7 +21,7 @@
     as.numeric(x)
     as.logical(x)
     as.character(x)
-#矩阵
+#3.矩阵
     #创建3行，2列的矩阵，依次赋值10到15
     mx <- matrix(10:15, nrow = 3, ncol = 2)
     #创建一个向量
